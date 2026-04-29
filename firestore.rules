@@ -1,0 +1,108 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    match /system/health {
+      allow read: if true;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function getUserEmail() {
+      return (request.auth != null && request.auth.token != null && "email" in request.auth.token) ? request.auth.token.email.lower() : "";
+    }
+
+    function isProjectAdmin(pData) {
+      let isAuth = isSignedIn();
+      let email = getUserEmail();
+      let isSuperAdmin = email == 'tanvuongvltkm@gmail.com';
+      
+      let isOwner = pData != null && 'ownerId' in pData && pData.ownerId == request.auth.uid;
+      
+      let hasRole = pData != null && 'collaboratorRoles' in pData && pData.collaboratorRoles != null && email in pData.collaboratorRoles;
+      let role = hasRole ? pData.collaboratorRoles[email] : null;
+      
+      return isAuth && (isSuperAdmin || isOwner || role == 'admin');
+    }
+    
+    function isProjectCollaborator(pData) {
+      let isAuth = isSignedIn();
+      let email = getUserEmail();
+      let isSuperAdmin = email == 'tanvuongvltkm@gmail.com';
+      
+      let hasRole = pData != null && 'collaboratorRoles' in pData && pData.collaboratorRoles != null && email in pData.collaboratorRoles;
+      let role = hasRole ? pData.collaboratorRoles[email] : null;
+      
+      let isLegacy = pData != null && 'collaborators' in pData && pData.collaborators != null && (pData.collaborators is list) && pData.collaborators.hasAny([email]);
+      let isOwner = pData != null && 'ownerId' in pData && pData.ownerId == request.auth.uid;
+      
+      return isAuth && (isSuperAdmin || isOwner || role == 'admin' || role == 'collaborator' || isLegacy);
+    }
+
+    match /projects/{projectId} {
+      allow create: if isSignedIn() && request.resource.data.ownerId == request.auth.uid;
+      allow read: if true;
+      allow update: if isProjectAdmin(resource.data);
+      allow delete: if isProjectAdmin(resource.data) && getUserEmail() == 'tanvuongvltkm@gmail.com';
+
+      function getPData() {
+        return get(/databases/$(database)/documents/projects/$(projectId)).data;
+      }
+
+      match /config/{item} {
+        allow read: if true;
+        allow write: if isProjectAdmin(getPData());
+      }
+      match /episodes/{item} {
+        allow read: if true;
+        allow create, update: if isProjectCollaborator(getPData());
+        allow delete: if isProjectAdmin(getPData());
+      }
+      match /characters/{item} {
+        allow read: if true;
+        allow create, update: if isProjectCollaborator(getPData());
+        allow delete: if isProjectAdmin(getPData());
+      }
+      match /arcs/{item} {
+        allow read: if true;
+        allow create, update: if isProjectCollaborator(getPData());
+        allow delete: if isProjectAdmin(getPData());
+      }
+      match /factions/{item} {
+        allow read: if true;
+        allow create, update: if isProjectCollaborator(getPData());
+        allow delete: if isProjectAdmin(getPData());
+      }
+      match /artifacts/{item} {
+        allow read: if true;
+        allow create, update: if isProjectCollaborator(getPData());
+        allow delete: if isProjectAdmin(getPData());
+      }
+      match /weapons/{item} {
+        allow read: if true;
+        allow create, update: if isProjectCollaborator(getPData());
+        allow delete: if isProjectAdmin(getPData());
+      }
+      match /memories/{item} {
+        allow read: if true;
+        allow create, update: if isProjectCollaborator(getPData());
+        allow delete: if isProjectAdmin(getPData());
+      }
+      match /sideStories/{item} {
+        allow read: if true;
+        allow create, update: if isProjectCollaborator(getPData());
+        allow delete: if isProjectAdmin(getPData());
+      }
+      match /updates/{item} {
+        allow read: if true;
+        allow create: if isProjectCollaborator(getPData());
+      }
+    }
+  }
+}

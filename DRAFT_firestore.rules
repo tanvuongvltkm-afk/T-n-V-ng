@@ -1,0 +1,75 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Global helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Validation for Project
+    function isValidProject(data) {
+      return data.title is string && data.title.size() <= 200 &&
+             data.ownerId == request.auth.uid;
+    }
+
+    match /projects/{projectId} {
+      allow create: if isSignedIn() && isValidProject(incoming()) && isValidId(projectId);
+      allow get: if isOwner(existing().ownerId);
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow update: if isOwner(existing().ownerId) && isValidProject(incoming());
+      allow delete: if isOwner(existing().ownerId);
+
+      // Sub-collections
+      match /episodes/{item} {
+        allow create: if isProjectOwner(projectId) && isValidEpisode(incoming());
+        allow read: if isProjectOwner(projectId);
+        allow update: if isProjectOwner(projectId) && isValidEpisode(incoming());
+        allow delete: if isProjectOwner(projectId);
+      }
+      
+      match /characters/{item} {
+        allow read, write: if isProjectOwner(projectId);
+      }
+      
+      match /arcs/{item} {
+        allow read, write: if isProjectOwner(projectId);
+      }
+      
+      match /factions/{item} {
+        allow read, write: if isProjectOwner(projectId);
+      }
+    }
+
+    // Master Gate helper
+    function isProjectOwner(projectId) {
+      return isSignedIn() && get(/databases/$(database)/documents/projects/$(projectId)).data.ownerId == request.auth.uid;
+    }
+
+    function isValidEpisode(data) {
+      return data.title is string && data.title.size() <= 200 &&
+             data.ownerId == request.auth.uid &&
+             data.projectId is string;
+    }
+  }
+}

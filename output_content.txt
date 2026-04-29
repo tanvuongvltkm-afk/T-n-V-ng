@@ -1,0 +1,21 @@
+  const [logicWarningText, setLogicWarningText] = useState('');
+  const [expandedPointIdx, setExpandedPointIdx] = useState<number | null>(null);
+  const [isGeneratingScene, setIsGeneratingScene] = useState(false);
+  const [characterSearchQuery, setCharacterSearchQuery] = useState('');
+  const [isGeneratingVideoPromptForScene, setIsGeneratingVideoPromptForScene] = useState<Record<string, boolean>>({});
+  const [editingSceneId, setEditingSceneId] = useState<{epId: number, point: string} | null>(null);
+  const [editingSceneContent, setEditingSceneContent] = useState('');
+  const [fullScreenScene, setFullScreenScene] = useState<{ep: Episode, point: string, scene: SceneDetail} | null>(null);
+  
+  // Mentions State
+  const [mentionSuggestions, setMentionSuggestions] = useState<{name: string, avatar: string, type: string}[]>([]);
+  const [mentionPosition, setMentionPosition] = useState<{top: number, left: number} | null>(null);
+  const [mentionQuery, setMentionQuery] = useState('');
+  const [activeMentionInput, setActiveMentionInput] = useState<{epId: number, point: string} | null>(null);
+  const [showShareModal, setShowShareModal] = useState(false);
+  const [shareEmail, setShareEmail] = useState('');
+  const [shareRole, setShareRole] = useState<'admin' | 'collaborator' | 'viewer'>('collaborator');
+  const [isSharing, setIsSharing] = useState(false);
+  const [isMigrating, setIsMigrating] = useState(false);
+  const lastProjectSyncRef = React.useRef<any>(null);
+  const [syncPercentage, setSyncPercentage] = useState(0);

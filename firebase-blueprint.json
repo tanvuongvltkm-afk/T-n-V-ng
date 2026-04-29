@@ -1,0 +1,127 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "A storytelling project/movie",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "sidebarBgImage": { "type": "string" },
+        "collaborators": { "type": "array", "items": { "type": "string" } },
+        "tabIcons": { "type": "object" },
+        "appLogo": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "ownerId"]
+    },
+    "Episode": {
+      "title": "Episode",
+      "description": "An episode in the project",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "title": { "type": "string" },
+        "arc": { "type": "string" },
+        "summary": { "type": "array", "items": { "type": "string" } },
+        "status": { "type": "string", "enum": ["draft", "detailed", "final"] },
+        "scenes": { 
+          "type": "array", 
+          "items": { 
+            "type": "object",
+            "properties": {
+              "point": { "type": "string" },
+              "content": { "type": "string" },
+              "videoPrompt": { "type": "string" },
+              "storyboardImage": { "type": "string" }
+            }
+          }
+        },
+        "logicWarnings": { "type": "string" },
+        "characterName": { "type": "string" },
+        "projectId": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["id", "title", "projectId", "ownerId"]
+    },
+    "Character": {
+      "title": "Character",
+      "description": "A character in the project",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "description": { "type": "string" },
+        "faction": { "type": "string" },
+        "avatar": { "type": "string" },
+        "projectId": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["name", "projectId", "ownerId"]
+    },
+    "StoryArc": {
+      "title": "StoryArc",
+      "description": "A story arc (Tập) grouping scenes",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "episodes": { "type": "array", "items": { "type": "number" } },
+        "coverImage": { "type": "string" },
+        "projectId": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["title", "projectId", "ownerId"]
+    },
+    "Faction": {
+      "title": "Faction",
+      "description": "A faction (môn phái) in the project",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "alignment": { "type": "string" },
+        "projectId": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["name", "projectId", "ownerId"]
+    },
+    "Artifact": {
+      "title": "Artifact",
+      "description": "A legendary artifact in the project",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "origin": { "type": "string" },
+        "effect": { "type": "string" },
+        "avatar": { "type": "string" },
+        "projectId": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["name", "projectId", "ownerId"]
+    },
+    "ProjectUpdate": {
+      "title": "ProjectUpdate",
+      "description": "Log of updates for the project",
+      "type": "object",
+      "properties": {
+        "timestamp": { "type": "string", "format": "date-time" },
+        "message": { "type": "string" },
+        "type": { "type": "string" },
+        "projectId": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["timestamp", "message", "projectId", "ownerId"]
+    }
+  },
+  "firestore": {
+    "projects": { "schema": "Project", "description": "User storytelling projects" },
+    "projects/{projectId}/episodes": { "schema": "Episode", "description": "Episodes of a project" },
+    "projects/{projectId}/characters": { "schema": "Character", "description": "Characters of a project" },
+    "projects/{projectId}/arcs": { "schema": "StoryArc", "description": "Story arcs of a project" },
+    "projects/{projectId}/factions": { "schema": "Faction", "description": "Factions of a project" },
+    "projects/{projectId}/artifacts": { "schema": "Artifact", "description": "Artifacts of a project" },
+    "projects/{projectId}/updates": { "schema": "ProjectUpdate", "description": "Update logs of a project" }
+  }
+}

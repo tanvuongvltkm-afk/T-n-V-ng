@@ -1,0 +1,191 @@
+587:  const canEdit = isAdmin || userRole === 'admin' || userRole === 'collaborator' || storageMode === 'local' || isEffectivelyOffline;
+589:  const canEditUI = isAdmin || userRole === 'admin' || storageMode === 'local' || isEffectivelyOffline;
+781:    if (!authLoading && user && !user.isAnonymous && !canEdit && !hasShownReadOnlyNotice && activeProjectId) {
+785:  }, [user, canEdit, authLoading, hasShownReadOnlyNotice, activeProjectId]);
+2059:    if (!canEdit || characters.length === 0 || factions.length === 0 || !activeProjectId) return;
+2083:  }, [characters, factions, activeProjectId, canEdit, viewingFaction]);
+2099:    if (!canEdit) return;
+2120:    if (!canEdit) return;
+2202:    if (!canEdit) return;
+2302:    if (!activeProjectId || !canEdit) return;
+2406:    if (!canEdit) {
+2746:    if (!canEdit) return;
+2797:    if (!canEdit) return;
+2837:    if (!canEdit) return;
+2888:    if (!canEdit) return;
+2941:    if (!canEdit) return;
+3026:    if (!canEdit) return;
+3084:    if (!canEdit) return;
+3121:    if (!canEdit) return;
+3282:    if (!canEdit) {
+3352:    if (!canEdit) return;
+3365:    if (!canEdit) return;
+3390:    console.log("Saving character detail:", {canEdit, selectedCharacter, activeProjectId});
+3391:    if (!canEdit) {
+3471:    if (!canEdit) return;
+3563:    if (!canEdit) {
+3624:    if (!showFactionMemberModal || !canEdit || !activeProjectId) return;
+3741:    if (!canEdit) {
+3821:    if (!canEdit) {
+3881:    if (!canEditUI) return;
+3882:    if (!canEdit) return;
+3895:    if (!canEditUI) return;
+3896:    if (!canEdit) return;
+3909:    if (!canEditUI) return;
+3910:    if (!canEdit) return;
+3961:    if (!canEdit) return;
+3993:    if (!canEdit) return;
+4008:    if (!canEdit) return;
+4031:    if (!canEdit) return;
+4058:    if (!canEdit) return;
+4131:    if (!canEdit) return;
+4148:    if (!canEdit) return;
+4708:          {canEdit ? (
+4788:               {canEditUI && (
+4997:                          if (activeProjectId && user && canEdit) {
+5025:                    {canEdit && (
+5217:                  {canEdit && (
+5276:                    <div className={`relative ${canEditUI ? 'group cursor-pointer' : 'cursor-default'} shrink-0`}>
+5277:                      {canEditUI && (
+5287:                        htmlFor={canEditUI ? "upload-tab-updatesLog" : undefined} 
+5288:                        className={`w-12 h-12 sm:w-20 sm:h-20 rounded-2xl bg-white border-2 border-amber-500 shadow-md flex items-center justify-center overflow-hidden ${canEditUI ? 'cursor-pointer' : 'cursor-default'}`}
+5295:                        {canEdit && (
+5338:                    <div className={`relative ${canEditUI ? 'group cursor-pointer' : 'cursor-default'} shrink-0`}>
+5345:                        disabled={!canEditUI}
+5347:                      <label htmlFor={canEditUI ? "upload-tab-episodes" : ""} className={`w-12 h-12 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-white border sm:border-2 border-gold shadow-md flex items-center justify-center overflow-hidden ${canEditUI ? 'cursor-pointer' : ''}`}>
+5353:                        {canEditUI && (
+5365:                  {canEdit && (
+5390:                              <DraggableArc key={`arc-${arcIdx}`} draggableId={`arc-${arcIdx}`} index={arcIdx} isDragDisabled={!canEdit}>
+5398:                                      {canEdit && (
+5464:                                          {canEdit && (
+5510:                                          {!canEdit && (
+5547:                                          <DraggableComp key={ep.id} draggableId={ep.id.toString()} index={index} isDragDisabled={!canEdit}>
+5555:                                                  {canEdit && (
+5571:                                                      disabled={!canEdit}
+5572:                                                      className={`w-5 h-5 rounded border-gold/30 text-jade focus:ring-jade/40 ${canEdit ? 'cursor-pointer' : 'cursor-default'}`}
+5573:                                                      title={canEdit ? "Đánh dấu đã sản xuất" : ""}
+5612:                                                      {canEdit && (
+5702:                                                                              if (canEdit) {
+5715:                                                                          {canEdit && (
+5755:                                                                              {canEdit && (
+5831:                                                                                      if (canEdit) {
+5836:                                                                                    className={`whitespace-pre-wrap text-[10px] sm:text-lg text-ink/90 font-serif leading-relaxed sm:leading-loose text-justify-viet italic ${canEdit ? 'cursor-text hover:bg-parchment/40' : 'cursor-default'} rounded-lg sm:rounded-2xl transition-all border sm:border-2 border-transparent ${canEdit ? 'hover:border-gold/30 group/scene' : ''} relative bg-white/60 shadow-md min-h-[100px] sm:min-h-[300px] p-3 sm:p-6`}
+5839:                                                                                    {canEdit && (
+5846:                                                                                {canEdit && (
+5877:                                                                                  readOnly={!canEdit}
+5880:                                                                                    if (!canEdit) return;
+5888:                                                                                  className={`w-full min-h-[100px] sm:min-h-[600px] bg-white/60 p-2 sm:p-6 rounded-lg sm:rounded-xl text-[10px] sm:text-md font-mono leading-snug sm:leading-relaxed border sm:border-2 ${canEdit ? 'border-jade/20 focus:border-jade focus:ring-4 focus:ring-jade/10' : 'border-transparent'} transition-all italic text-jade/80 scrollbar-hide shadow-inner outline-none`}
+5918:                                                                                    {canEdit && (
+5964:                                                              {canEdit && (
+5988:                                                                {canEdit && (
+6015:                                                                      if (canEdit) {
+6020:                                                                    className={`${canEdit ? 'cursor-pointer' : 'cursor-default'} group relative`}
+6028:                                                                        {canEdit ? 'Chưa có cảnh báo logic nào. Nhấn để thêm nhắc nhở...' : 'Chưa có cảnh báo logic.'}
+6031:                                                                    {canEdit && (
+6049:                                                                {canEdit && (
+6099:                                                              {canEdit && (<button 
+6141:                                    {canEdit && (
+6237:                                {canEdit && (
+6261:                                      {canEdit && (
+6273:                                      readOnly={!canEdit}
+6288:                                        readOnly={!canEdit}
+6298:                                    {canEdit && (
+6323:                  {canEdit && (
+6420:                                {canEdit && (
+6445:                                          {canEdit && (
+6457:                                          readOnly={!canEdit}
+6471:                                            disabled={!canEdit}
+6491:                                          readOnly={!canEdit}
+6501:                                      {canEdit && (
+6527:                  {canEdit && (
+6573:                  {canEdit && (
+6627:                                  <DraggableComp key={char.id || char.name} draggableId={`char-${char.id || char.name}`} index={index} isDragDisabled={!canEdit}>
+6632:                                        {...(canEdit ? providedDrag.dragHandleProps : {})}
+6633:                                        className={`bg-stone-50 border border-gold/30 p-2 sm:p-5 rounded-xl sm:rounded-2xl group hover:border-gold hover:shadow-lg transition-all relative ${canEdit ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'} flex flex-row sm:flex-col items-center sm:text-center gap-3 sm:gap-0 ${snapshotDrag.isDragging ? 'shadow-2xl ring-2 ring-gold z-50 bg-stone-100' : ''} h-full`}
+6638:                                        {canEdit && (
+6702:                    <div className={`relative ${canEditUI ? 'group cursor-pointer' : 'cursor-default'} shrink-0`}>
+6703:                      <input type="file" id="upload-tab-factions" accept="image/*" className="hidden" onChange={(e) => handleTabIconUpload('factions', e)} disabled={!canEditUI} />
+6704:                      <label htmlFor={canEditUI ? "upload-tab-factions" : ""} className={`w-12 h-12 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-white border sm:border-2 border-gold shadow-md flex items-center justify-center overflow-hidden ${canEditUI ? 'cursor-pointer' : ''}`}>
+6710:                        {canEditUI && (
+6722:                  {canEdit && (
+6726:                          if (!activeProjectId || !canEdit) return;
+6784:                                  <DraggableComp key={fac.id || fac.name} draggableId={`fac-${fac.id || fac.name}`} index={index} isDragDisabled={!canEdit}>
+6789:                                        {...(canEdit ? providedDrag.dragHandleProps : {})}
+6790:                                        className={`bg-white p-3 sm:p-5 rounded-2xl border border-gold shadow-sm group hover:shadow-md transition-all relative flex flex-row items-center gap-4 ${canEdit ? 'cursor-grab' : 'cursor-default'} ${snapshotDrag.isDragging ? 'shadow-2xl ring-2 ring-jade z-50 scale-105' : ''}`}
+6817:                                        {canEdit && (
+6879:                  {canEdit && (
+6939:                           {canEdit && (
+6991:                    <div className={`relative ${canEditUI ? 'group cursor-pointer' : 'cursor-default'} shrink-0`}>
+6992:                      {canEditUI && (
+7002:                        htmlFor={canEditUI ? "upload-tab-settings" : undefined} 
+7003:                        className={`w-12 h-12 sm:w-20 sm:h-20 rounded-2xl bg-white border-2 border-gold shadow-md flex items-center justify-center overflow-hidden ${canEditUI ? 'cursor-pointer' : 'cursor-default'}`}
+7010:                        {canEdit && (
+7193:                  {canEdit && (
+7197:                          if (!activeProjectId || !canEdit) return;
+7255:                           {canEdit && (
+7479:                        {canEdit && (
+7606:                        className={`w-32 h-32 rounded-full bg-sand/30 border-2 border-dashed border-gold flex items-center justify-center relative overflow-hidden group/upload ${canEdit ? 'cursor-pointer' : 'cursor-default'} shadow-inner transition-all ${canEdit ? 'hover:border-cinnabar' : ''}`} 
+7607:                        onClick={() => canEdit && document.getElementById('avatar-upload')?.click()}
+7617:                        {canEdit && (
+7623:                      <input id="avatar-upload" type="file" accept="image/*" className="hidden" onChange={handleAvatarChange} disabled={!canEdit} />
+7624:                      {canEdit && (
+7640:                          readOnly={!canEdit} 
+7655:                        <input readOnly={!canEdit} value={newChar.abbreviation || ''} onChange={e => setNewChar({...newChar, abbreviation: e.target.value})} placeholder="VD: TV" type="text" className="w-full bg-white/50 backdrop-blur-sm border border-gold/30 rounded-xl px-4 py-3 text-ink placeholder:text-ink/40 focus:ring-2 focus:ring-cinnabar/30 focus:border-cinnabar/50 transition-all text-sm" />
+7661:                        <input readOnly={!canEdit} required value={newChar.role || ''} onChange={e => setNewChar({...newChar, role: e.target.value})} placeholder="VD: Sư phụ, Đệ tử, Lãng khách..." type="text" className="w-full bg-white/50 backdrop-blur-sm border border-gold/30 rounded-xl px-4 py-3 text-ink placeholder:text-ink/40 focus:ring-2 focus:ring-cinnabar/30 focus:border-cinnabar/50 transition-all text-sm" />
+7666:                          disabled={!canEdit}
+7680:                          disabled={!canEdit}
+7693:                          {canEdit && (
+7705:                       <textarea readOnly={!canEdit} value={newChar.attire || ''} onChange={e => setNewChar({...newChar, attire: e.target.value})} placeholder="Mô tả ngoại hình, y phục, phụ kiện..." className="w-full bg-white border border-gold/50 rounded-lg px-4 py-2 focus:outline-none focus:ring-1 focus:ring-cinnabar h-20 text-sm" />
+7906:                  {canEdit && (
+8491:                      {canEdit && (
+9025:                        {canEdit && (
+9040:                        readOnly={!canEdit}
+9054:                        readOnly={!canEdit}
+9065:                        disabled={!canEdit}
+9079:                      disabled={!canEdit}
+9094:                      {canEdit && (
+9118:                      readOnly={!canEdit}
+9124:                  {canEdit && (
+9164:                      className={`w-32 h-32 rounded-full bg-sand/30 border-2 border-dashed border-gold flex items-center justify-center relative overflow-hidden group/upload ${canEdit ? 'cursor-pointer' : 'cursor-default'} shadow-inner transition-all hover:border-sacred-orange`} 
+9165:                      onClick={() => canEdit && document.getElementById('artifact-avatar-upload')?.click()}
+9175:                      {canEdit && (
+9191:                    }} disabled={!canEdit} />
+9192:                    {canEdit && (
+9207:                        {canEdit && (
+9217:                        {canEdit && (
+9236:                          readOnly={!canEdit}
+9251:                          readOnly={!canEdit}
+9266:                        {canEdit && (
+9275:                        {canEdit && (
+9290:                      readOnly={!canEdit}
+9300:                      {canEdit && (
+9314:                      readOnly={!canEdit}
+9321:                  {canEdit && (
+9363:                      className={`w-32 h-32 rounded-full bg-sand/30 border-2 border-dashed border-gold flex items-center justify-center relative overflow-hidden group/upload ${canEdit ? 'cursor-pointer' : 'cursor-default'} shadow-inner transition-all hover:border-blue-600`} 
+9364:                      onClick={() => canEdit && document.getElementById('weapon-avatar-upload')?.click()}
+9374:                      {canEdit && (
+9390:                    }} disabled={!canEdit} />
+9391:                    {canEdit && (
+9409:                          readOnly={!canEdit}
+9424:                          readOnly={!canEdit}
+9438:                      readOnly={!canEdit}
+9450:                      readOnly={!canEdit}
+9460:                      readOnly={!canEdit}
+9467:                  {canEdit && (
+9509:                      {canEdit && (
+9522:                      readOnly={!canEdit}
+9533:                      {canEdit && (
+9554:                      readOnly={!canEdit}
+9562:                {canEdit && (
+9597:                        readOnly={!canEdit}
+9608:                        disabled={!canEdit}
+9622:                      {canEdit && (
+9635:                      readOnly={!canEdit}
+9643:                {canEdit && (
+9674:                      {canEdit && (
+9688:                      readOnly={!canEdit}
+9699:                      {canEdit && (
+9728:                      readOnly={!canEdit}
+9736:                {canEdit && (
+9837:                      readOnly={!canEdit}
+9846:                {canEdit && (

@@ -1,0 +1,15 @@
+{
+	"appId": "com.mongdevuong.app",
+	"appName": "Remix: Mong De Vuong",
+	"webDir": "dist",
+	"plugins": {
+		"GoogleAuth": {
+			"scopes": [
+				"profile",
+				"email"
+			],
+			"serverClientId": "YOUR_WEB_CLIENT_ID_HERE.apps.googleusercontent.com",
+			"forceCodeForRefreshToken": true
+		}
+	}
+}

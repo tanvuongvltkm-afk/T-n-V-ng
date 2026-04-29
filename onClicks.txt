@@ -1,0 +1,145 @@
+2208:               onClick={() => login()}
+2235:          onClick={() => setIsSidebarOpen(true)}
+2258:              onClick={() => setIsSidebarOpen(false)}
+2299:                      onClick={() => canEdit && setIsEditingTitle(true)}
+2311:                  onClick={() => {
+2345:                onClick={() => {
+2365:                    onClick={() => {
+2375:                    onClick={() => {
+2394:                onClick={migrateFromLocal}
+2446:                   onClick={handleLogout}
+2454:                   onClick={() => login()}
+2514:                        onClick={migrateFromLocal}
+2523:                        onClick={() => window.location.reload()}
+2647:                            <div className="bg-parchment/40 p-3 sm:p-5 rounded-xl border border-gold/30 hover:border-cinnabar/30 transition-all cursor-pointer" onClick={() => setActiveTab('episodes')}>
+2720:                        onClick={() => setActiveTab('episodes')}
+2779:                      onClick={() => setShowAddArcModal(true)}
+2821:                                        onClick={() => {
+2859:                                                 onClick={(e) => e.stopPropagation()}
+2878:                                              <label className="p-1 sm:p-2 text-wood/50 hover:text-jade cursor-pointer transition-colors bg-white/50 rounded-lg shadow-sm border border-gold/10" onClick={(e) => e.stopPropagation()}>
+2897:                                                onClick={(e) => {
+2908:                                                onClick={(e) => {
+2923:                                                onClick={(e) => {
+2974:                                                  <div className="flex items-center px-1" onClick={(e) => e.stopPropagation()}>
+2988:                                                    onClick={() => setExpandedEpisodeId(isEpExpanded ? null : ep.id)}
+3001:                                                          onClick={(e) => e.stopPropagation()}
+3025:                                                            onClick={(e) => {
+3036:                                                            onClick={(e) => {
+3080:                                                                      onClick={() => setExpandedPointIdx(isPointExpanded ? null : pIdx)}
+3093:                                                                            onClick={(e) => e.stopPropagation()}
+3130:                                                                              onClick={(e) => {
+3142:                                                                            onClick={(e) => {
+3171:                                                                                    onClick={() => handleGenerateSceneDetail(ep, point, pIdx)}
+3179:                                                                                    onClick={() => scene && handleGenerateVideoPromptForScene(ep, scene)}
+3190:                                                                                  onClick={() => setFullScreenScene({ ep, point, scene })}
+3261:                                                                                    onClick={() => handleToggleSceneDictation(ep, point)}
+3278:                                                                                      onClick={() => {
+3340:                                                                                          onClick={() => handleGenerateSceneDetail(ep, point, pIdx)}
+3348:                                                                                          onClick={() => handleToggleSceneDictation(ep, point)}
+3370:                                                                  onClick={() => {
+3399:                                                                    onClick={() => handleAIAnalyzeLogic(ep)}
+3423:                                                                    onClick={() => {
+3460:                                                                    onClick={() => handleAIExtractChanges(ep)}
+3514:                                                                onClick={() => {
+3523:                                                                onClick={() => {
+3535:                                                                onClick={() => setSelectedEpisode(ep)}
+3554:                                        onClick={() => setShowAddEpisodeModal(arc.title)}
+3607:                          <div className="p-6 flex justify-between items-center bg-white cursor-pointer group" onClick={() => setExpandedEpisodeId(expandedEpisodeId === story.id ? null : story.id)}>
+3612:                              <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
+3614:                                  onClick={() => setExpandedEpisodeId(expandedEpisodeId === story.id ? null : story.id)}
+3620:                                  onClick={() => setSelectedEpisode(story)}
+3627:                                    onClick={() => {
+3648:                                          onClick={() => handleAIAnalyzeLogic(story)}
+3685:                                        onClick={() => setSideStories(sideStories.map(s => s.id === story.id ? {...s, summary: [...s.summary, '...']} : s))}
+3707:                      onClick={() => {
+3749:                            <div className="p-3 sm:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white cursor-pointer group gap-3" onClick={() => setExpandedEpisodeId(expandedEpisodeId === memory.id ? null : memory.id)}>
+3766:                              <div className="flex gap-2 w-full sm:w-auto" onClick={(e) => e.stopPropagation()}>
+3768:                                  onClick={() => setExpandedEpisodeId(expandedEpisodeId === memory.id ? null : memory.id)}
+3774:                                  onClick={() => setSelectedEpisode(memory)}
+3781:                                    onClick={() => {
+3803:                                              onClick={() => handleAIAnalyzeLogic(memory)}
+3859:                                          onClick={() => setCharacterMemories(characterMemories.map(m => m.id === memory.id ? {...m, summary: [...m.summary, '...']} : m))}
+3882:                      onClick={() => {
+3928:                      onClick={() => {
+3974:                                        onClick={(e) => {
+3996:                                                onClick={(e) => {
+4006:                                                onClick={(e) => {
+4065:                      onClick={() => {
+4106:                                        onClick={() => setViewingFaction(fac)}
+4135:                                              onClick={(e) => { e.stopPropagation(); handleEditFaction(factions.findIndex(f => f.name === fac.name), alignment); }}
+4142:                                              onClick={(e) => { e.stopPropagation(); handleDeleteFaction(fac.id || toSlug(fac.name), fac.name); }}
+4196:                      onClick={() => {
+4212:                      onClick={() => setSelectedArtifact(artifact)}
+4232:                                 onClick={(e) => { e.stopPropagation(); setNewArtifact({...artifact}); setEditingArtifactIdx(index); setShowAddArtifact(true); }}
+4238:                                 onClick={(e) => { e.stopPropagation(); handleDeleteArtifact(artifact.id || toSlug(artifact.name), artifact.name); }}
+4295:                  onClick={() => {
+4331:                            onClick={() => handleGenerateScript(selectedEpisode)}
+4393:                              onClick={() => selectedEpisode && handleGenerateVideoPrompt(selectedEpisode, generatedScript || '')}
+4413:                                onClick={() => {
+4448:                <button onClick={() => setShowAddChar(false)} className="absolute top-4 right-4 text-wood"><X size={20} /></button>
+4457:                        onClick={() => canEdit && document.getElementById('avatar-upload')?.click()}
+4477:                          onClick={() => document.getElementById('avatar-upload')?.click()}
+4491:                              onClick={() => handleToggleGenericDictation('char_name', (val) => setNewChar({...newChar, name: val}), newChar.name || "", "Chuyển thành tên nhân vật kiếm hiệp ngầu (chỉ trả về tên):\n\n\"{{transcript}}\"", true)}
+4544:                              onClick={() => handleToggleGenericDictation('char_attire', (val) => setNewChar({...newChar, attire: val}), newChar.attire || "", "Mô tả lại trang phục nhân vật kiếm hiệp sau cho sang trọng và đậm chất cổ phong:\n\n\"{{transcript}}\"")}
+4558:                        onClick={() => canEdit && document.getElementById('full-body-upload')?.click()}
+4584:                            onClick={() => handleToggleGenericDictation('char_weapon', (val) => setNewChar({...newChar, weapon: val}), newChar.weapon || "", "Chuyển đổi lại văn bản thành tên vũ khí kiếm hiệp (chỉ trả về tên):\n\n\"{{transcript}}\"")}
+4598:                            onClick={() => handleToggleGenericDictation('char_weaponOrigin', (val) => setNewChar({...newChar, weaponOrigin: val}), newChar.weaponOrigin || "", "Chuyển văn bản sau nói về lai lịch truyền thuyết của bảo khí sang văn phong kiếm hiệp (phù hợp tiểu thuyết):\n\n\"{{transcript}}\"")}
+4611:                        onClick={() => document.getElementById('weapon-avatar-upload')?.click()}
+4638:                          onClick={() => handleToggleGenericDictation('char_relationships', (val) => setNewChar({...newChar, relationships: val}), newChar.relationships || "", "Chuyển các mối quan hệ sau sang phong cách giang hồ (VD: Sư phụ: Tên, Hồng nhan tri kỷ: Tên...):\n\n\"{{transcript}}\"")}
+4656:                              onClick={() => handleToggleGenericDictation('char_martialBeginner', (val) => setNewChar({...newChar, martialArtsBeginner: val}), newChar.martialArtsBeginner || "", "Chuyển tên/mô tả những võ công sau sang tên chiêu thức kiếm hiệp thật kêu (xuống dòng từng chiêu):\n\n\"{{transcript}}\"")}
+4670:                              onClick={() => handleToggleGenericDictation('char_martialIntermediate', (val) => setNewChar({...newChar, martialArtsIntermediate: val}), newChar.martialArtsIntermediate || "", "Chuyển tên/mô tả những võ công sau sang tên chiêu thức kiếm hiệp cao siêu hơn (xuống dòng từng chiêu):\n\n\"{{transcript}}\"")}
+4684:                              onClick={() => handleToggleGenericDictation('char_martialAdvanced', (val) => setNewChar({...newChar, martialArtsAdvanced: val}), newChar.martialArtsAdvanced || "", "Chuyển tên/mô tả võ công sau sang tên tuyệt học, bí kíp võ công tối thượng của kiếm hiệp:\n\n\"{{transcript}}\"")}
+4718:                                onClick={() => handleToggleGenericDictation('char_martialSpecial', (val) => setNewChar({...newChar, martialArtsSpecial: val}), newChar.martialArtsSpecial || "", "Chuyển mô tả cơ duyên sau sang văn phong kiếm hiệp (phong cách kỳ ngộ, rớt xuống vực nhặt bí kíp...):\n\n\"{{transcript}}\"")}
+4736:                          onClick={() => handleToggleCharacterDictation('description')}
+4751:                          onClick={() => handleToggleCharacterDictation('personality')}
+4766:                          onClick={() => handleToggleCharacterDictation('past')}
+4795:                  onClick={() => {
+4845:                                 onClick={() => setViewingWeapon(true)}
+4939:                               onClick={handleAIGenerateConceptArt}
+4994:                                onClick={() => {
+5060:                          onClick={() => setViewingRelationChar(null)} 
+5115:                              onClick={() => {
+5149:                             onClick={() => setViewingWeapon(false)}
+5191:                  onClick={() => setViewingFaction(null)} 
+5219:                              onClick={() => {
+5271:                           onClick={() => {
+5330:                               onClick={(e) => {
+5365:                  onClick={() => setSelectedArtifact(null)} 
+5427:                                 onClick={() => { setSelectedCharacter(owner); setSelectedArtifact(null); }} 
+5460:                <button onClick={() => {
+5485:                         onClick={() => document.getElementById('faction-flag-upload')?.click()}
+5493:                         onClick={handleGenerateFlagAI}
+5510:                            onClick={() => handleToggleGenericDictation('faction_name', (val) => setNewFaction({...newFaction, name: val}), newFaction.name || "", "Chuyển thành tên bang hội kiếm hiệp ngầu (chỉ trả về tên):\n\n\"{{transcript}}\"", true)}
+5564:                            onClick={() => handleToggleGenericDictation('faction_desc', (val) => setNewFaction({...newFaction, description: val}), newFaction.description || "", "Chuyển đoạn miêu tả lịch sử và tông chỉ của bang hội sau sang phong cách kiếm hiệp:\n\n\"{{transcript}}\"", true)}
+5572:                            onClick={handleGenerateFactionDescAI}
+5602:                <button onClick={() => {
+5614:                      onClick={() => canEdit && document.getElementById('artifact-avatar-upload')?.click()}
+5641:                        onClick={() => document.getElementById('artifact-avatar-upload')?.click()}
+5655:                          onClick={() => handleToggleGenericDictation('artifact_name', (val) => setNewArtifact({...newArtifact, name: val}), newArtifact.name || "", "Chuyển thành tên bảo vật/kỳ trân kiếm hiệp ngầu (chỉ trả về tên):\n\n\"{{transcript}}\"", true)}
+5680:                          onClick={() => handleToggleGenericDictation('artifact_origin', (val) => setNewArtifact({...newArtifact, origin: val}), newArtifact.origin || "", "Chuyển đoạn miêu tả lai lịch, nguồn gốc bảo vật sau sang phong cách kiếm hiệp kỳ bí:\n\n\"{{transcript}}\"", true)}
+5703:                          onClick={() => handleToggleGenericDictation('artifact_effect', (val) => setNewArtifact({...newArtifact, effect: val}), newArtifact.effect || "", "Chuyển đoạn miêu tả công dụng tuyệt đỉnh của bảo vật sau sang phong cách kiếm hiệp:\n\n\"{{transcript}}\"", true)}
+5736:                <button onClick={() => {
+5750:                          onClick={() => handleToggleGenericDictation('side_story_title', (val) => setNewEpisodePayload({...newEpisodePayload, title: val}), newEpisodePayload.title || "", "Chuyển thành tên ngoại truyện kiếm hiệp thật kêu (chỉ trả về tên):\n\n\"{{transcript}}\"", true)}
+5774:                            onClick={handleToggleDictation}
+5782:                            onClick={() => handleAICreateEpisode('NGOẠI TRUYỆN')}
+5803:                       onClick={handleSaveNewSideStory}
+5820:                <button onClick={() => {
+5863:                            onClick={() => handleAICreateEpisode('KÝ ỨC')}
+5884:                       onClick={handleSaveNewMemory}
+5901:                <button onClick={() => {
+5915:                          onClick={() => handleToggleGenericDictation('episode_title', (val) => setNewEpisodePayload({...newEpisodePayload, title: val}), newEpisodePayload.title || "", "Chuyển thành tên tập phim kiếm hiệp thật kêu (chỉ trả về tên):\n\n\"{{transcript}}\"", true)}
+5940:                            onClick={() => document.getElementById('import-episode-file')?.click()}
+5946:                            onClick={handleToggleDictation}
+5955:                            onClick={() => handleAICreateEpisode(showAddEpisodeModal)}
+5976:                       onClick={() => handleSaveNewEpisode(showAddEpisodeModal)}
+5999:                  onClick={() => setFullScreenScene(null)} 
+6025:                    onClick={() => {
+6056:                <button onClick={() => setShowAddArcModal(false)} className="absolute top-4 right-4 text-wood hover:text-cinnabar transition-colors"><X size={20} /></button>
+6065:                        onClick={() => handleToggleGenericDictation('arc_title', (val) => setNewArcTitle(val), newArcTitle, "Chuyển thành tên Hồi/Chương tiểu thuyết võ hiệp (ví dụ: Tôn Hiệu Giang Hồ) - chỉ trả về tên:\n\n\"{{transcript}}\"", true)}
+6085:                    onClick={handleSaveNewArc}
+6111:                  <button onClick={() => setShowShareModal(false)} className="text-wood/40 hover:text-cinnabar transition-colors">
+6130:                          onClick={() => handleShareProject(shareEmail, 'add')}
+6152:                                onClick={() => handleShareProject(email, 'remove')}
+6232:      onClick={isEditing ? undefined : onClick}
+6260:            onClick={(e) => e.stopPropagation()}
+6269:          onClick={(e) => {

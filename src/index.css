@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Pattaya&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Sura:wght@400;700&display=swap&subset=vietnamese');
+
+@theme {
+  --font-serif: "Lora", "EB Garamond", "Cormorant Garamond", serif;
+  --font-sans: "Be Vietnam Pro", "Inter", sans-serif;
+  --font-display: "Playfair Display", "Sura", "Pattaya", serif;
+  --font-title: "Sura", "Playfair Display", serif;
+  
+  --color-parchment: #e8dccb;
+  --color-ink: #4a3629;
+  --color-cinnabar: #c63d3f;
+  --color-jade: #2d5a4a;
+  --color-gold: #dcb172;
+  --color-sand: #c2b192;
+  --color-wood: #5c3c31;
+  --color-sacred-orange: #dcb172;
+  --color-pill-bg: #eadaaf;
+}
+
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  background-attachment: fixed;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app-container {
+  @apply min-h-screen bg-parchment/80 bg-blend-multiply;
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+}
+
+/* Ensure accents are not cut off in titles and labels */
+h1, h2, h3, h4, h5, h6, .font-display, .font-title {
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  color: var(--color-wood);
+}
+
+/* Custom Scroll UI Elements */
+.bg-scroll-inner {
+  background-color: var(--color-parchment);
+  background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
+}
+
+.writing-vertical-rl {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.ancient-card {
+  @apply bg-white/60 backdrop-blur-sm border border-gold shadow-sm relative overflow-hidden;
+  background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+}
+
+.ancient-card::before {
+  content: "";
+  @apply absolute top-0 left-0 w-full h-1 bg-cinnabar/40;
+}
+
+.grid-bg-pattern {
+  background-image: linear-gradient(to bottom, transparent 95%, rgba(0,0,0,0.02) 95%), linear-gradient(to right, transparent 95%, rgba(0,0,0,0.02) 95%);
+  background-size: 24px 24px;
+}
+
+.brush-stroke {
+  position: relative;
+}
+
+.brush-stroke::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: currentColor;
+  opacity: 0.15;
+  mask-image: linear-gradient(to right, black, transparent);
+  -webkit-mask-image: linear-gradient(to right, black, transparent);
+}
+
+.scroll-y-custom::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-y-custom::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+}
+
+.scroll-y-custom::-webkit-scrollbar-thumb {
+  background: var(--color-cinnabar);
+  border-radius: 10px;
+}
+
+.text-justify-viet {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
